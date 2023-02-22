@@ -13,41 +13,40 @@ function Form() {
     const history = useNavigate()
     function onSubmit(data) {
         history('/')
-        localStorage.setItem('register',JSON.stringify(data));
-        dispatch({type:"REGISTER_DATA",payload:data})
+        localStorage.setItem('register', JSON.stringify(data));
+        dispatch({ type: "REGISTER_DATA", payload: data })
     }
-    function valid() {
-        return (
-            {
-                required: {
-                    value: true,
-                    message: "This field is required"
+    function valid(index) {
+        if (index === 0)
+            return (
+                {
+                    required: {
+                        value: true,
+                        message: "This field is Required"
+                    }
                 }
-            }
-        )
+            )
     }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <Grid container columnSpacing={3}>
-                <Grid item md={6}>
-                    <Stack>
-                        <InputLabel>Business Description <BsAsterisk color="red" fontSize="10px" /></InputLabel>
-                        <TextField size="small" multiline rows={4}
-                            {...register("Business Description", { required: "this field is required" })}
-                            error={Boolean(errors["Business Description"])}
-                            helperText={errors["Business Description"]?.message} ></TextField>
-                    </Stack>
-                </Grid>
-
-                <Grid item md={6}>
-                    <Stack>
-                        <InputLabel>Corporate Philosophy</InputLabel>
-                        <TextField size="small" multiline rows={4} {...register("Corporate Philosophy")} ></TextField>
-                    </Stack>
-                </Grid>
+                {
+                    ['Business Description', 'Corporate Philosophy'].map((item, index) => {
+                        return (
+                            <Grid item md={6}>
+                                <Stack>
+                                    <InputLabel>Business Description {index === 0 ? <BsAsterisk color="red" fontSize="10px" /> : null}</InputLabel>
+                                    <TextField size="small" multiline rows={4}
+                                        {...register(item, valid(index))}
+                                        error={Boolean(errors[item])}
+                                        helperText={errors[item]?.message} ></TextField>
+                                </Stack>
+                            </Grid>
+                        )
+                    })
+                }
             </Grid>
-
             <Grid container rowSpacing={3} columnSpacing={7} my={3}>
 
                 {
@@ -78,7 +77,7 @@ function Form() {
             </FormControl>
 
             <Stack sx={{ display: "flex", alignItems: "center" }}>
-                <Button sx={{ padding: "10px 80px" ,backgroundColor:"hsl(249deg 68% 29%)"}} type="submit"  variant="contained">Save</Button>
+                <Button sx={{ padding: "10px 80px", backgroundColor: "hsl(249deg 68% 29%)" }} type="submit" variant="contained">Save</Button>
             </Stack>
 
         </form>
