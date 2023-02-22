@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import FormDialog from './allowance/FormDialog'
-import Form from './corporate registration/Form';
-import FixedDrawer from './drawer/Drawer';
-import MainPage from './main/MainPage';
+import FormDialog from './component/allowance/FormDialog'
+import Form from './component/corporate registration/Form';
+import FixedDrawer from './component/drawer/Drawer';
+import MainPage from './component/main/MainPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
