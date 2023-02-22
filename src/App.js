@@ -15,9 +15,7 @@ export default function App() {
         component="main" 
         sx={{ flexGrow: 1, bgcolor: 'background.default', m: 3 }}
       >
-        
         <FormDialog/>
-        
         <BrowserRouter>
         <Routes>
           <Route path='/' element={<MainPage/>}></Route>

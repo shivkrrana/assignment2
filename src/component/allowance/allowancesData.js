@@ -4,7 +4,7 @@ const allowancesData = [
         validation:{
             required:{
                 value:true,
-                message:'this is required'
+                message:'This is Required'
             }
         }
     },
@@ -13,7 +13,7 @@ const allowancesData = [
         validation:{
             required:{
                 value:true,
-                message:'this is required'
+                message:'This is Required'
             }
         }
     },
@@ -22,7 +22,7 @@ const allowancesData = [
         validation:{
             required:{
                 value:true,
-                message:'this is required'
+                message:'This is Required'
             }
         }
     },
@@ -31,7 +31,7 @@ const allowancesData = [
         validation:{
             required:{
                 value:true,
-                message:'this is required'
+                message:'This is Required'
             }
         }
     },
@@ -40,7 +40,7 @@ const allowancesData = [
         validation:{
             required:{
                 value:true,
-                message:'this is required'
+                message:'This is Required'
             }
         }
     },
@@ -49,7 +49,7 @@ const allowancesData = [
         validation:{
             required:{
                 value:true,
-                message:'this is required'
+                message:'This is Required'
             }
         }
     },
@@ -58,7 +58,7 @@ const allowancesData = [
         validation:{
             required:{
                 value:true,
-                message:'this is required'
+                message:'This is Required'
             }
         }
     },
@@ -67,7 +67,7 @@ const allowancesData = [
         validation:{
             required:{
                 value:true,
-                message:'this is required'
+                message:'This is Required'
             }
         }
     },
@@ -76,7 +76,7 @@ const allowancesData = [
         validation:{
             required:{
                 value:true,
-                message:'this is required'
+                message:'This is Required'
             }
         }
     },
@@ -85,7 +85,7 @@ const allowancesData = [
         validation:{
             required:{
                 value:true,
-                message:'this is required'
+                message:'This is Required'
             }
         }
     },
@@ -94,7 +94,7 @@ const allowancesData = [
         validation:{
             required:{
                 value:true,
-                message:'this is required'
+                message:'This is Required'
             }
         }
     },

@@ -27,7 +27,7 @@ function Header(props) {
             return (
                 <BiEditAlt className="edit" onClick={handleClickOpen} />
             )
-        else <BiEditAlt className="edit" />
+        else return <BiEditAlt className="edit" />
     }
 
     return (

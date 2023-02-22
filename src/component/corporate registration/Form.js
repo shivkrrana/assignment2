@@ -1,5 +1,5 @@
 
-import { Button, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, InputLabel, Radio, RadioGroup, TextField } from "@mui/material";
+import { Button, FormControl, FormControlLabel, FormLabel, Grid, InputLabel, Radio, RadioGroup, TextField } from "@mui/material";
 import { Stack } from "@mui/system";
 import { useForm } from "react-hook-form";
 import { BsAsterisk } from "react-icons/bs";
@@ -36,7 +36,7 @@ function Form() {
                         return (
                             <Grid item md={6}>
                                 <Stack>
-                                    <InputLabel>{item} {index === 0 ? <BsAsterisk color="red" fontSize="10px" /> : null}</InputLabel>
+                                    <InputLabel sx={{ fontWeight: "500", fontSize: "13px", marginBottom: "3px" }}>{item} {index === 0 ? <BsAsterisk color="red" fontSize="10px" /> : null}</InputLabel>
                                     <TextField size="small" multiline rows={4}
                                         {...register(item, valid(index))}
                                         error={Boolean(errors[item])}
@@ -47,8 +47,7 @@ function Form() {
                     })
                 }
             </Grid>
-            <Grid container rowSpacing={3} columnSpacing={7} my={3}>
-
+            <Grid container rowSpacing={2} columnSpacing={7} my={3}>
                 {
                     formData.map((item, index) => {
                         return (
@@ -66,13 +65,13 @@ function Form() {
                 }
             </Grid>
             <FormControl>
-                <FormLabel id="demo-controlled-radio-buttons-group">Foreign Owned</FormLabel>
+                <FormLabel id="demo-controlled-radio-buttons-group" sx={{ fontWeight: "500", fontSize: "13px", marginBottom: "3px" }}>Foreign Owned</FormLabel>
                 <RadioGroup
                     aria-labelledby="demo-controlled-radio-buttons-group"
                     name="controlled-radio-buttons-group" row
                 >
-                    <FormControlLabel value="yes" {...register('Foriegn Owned')} control={<Radio />} label="Yes" />
-                    <FormControlLabel value="no" {...register('Foriegn Owned')} control={<Radio />} label="No" />
+                    <FormControlLabel value="Yes" {...register('Foriegn Owned')} control={<Radio />} label="Yes" />
+                    <FormControlLabel value="No" {...register('Foriegn Owned')} control={<Radio />} label="No" />
                 </RadioGroup>
             </FormControl>
 
