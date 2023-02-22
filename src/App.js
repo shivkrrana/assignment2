@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import FormDialog from './allowance/FormDialog'
+import Form from './corporate registration/Form';
+import FixedDrawer from './drawer/Drawer';
+import MainPage from './main/MainPage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App() {
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{display:"flex"}} bgcolor="primary">
+      <FixedDrawer />
+      <Box
+        component="main" 
+        sx={{ flexGrow: 1, bgcolor: 'background.default', m: 3 }}
+      >
+        
+        <FormDialog/>
+        
+        <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<MainPage/>}></Route>
+          <Route path='/register' element={<Form/>}></Route>
+        </Routes>
+        </BrowserRouter>
+      </Box>
+    </Box>
   );
 }
-
-export default App;
