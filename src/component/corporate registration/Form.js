@@ -36,7 +36,7 @@ function Form() {
                         return (
                             <Grid item md={6}>
                                 <Stack>
-                                    <InputLabel>Business Description {index === 0 ? <BsAsterisk color="red" fontSize="10px" /> : null}</InputLabel>
+                                    <InputLabel>{item} {index === 0 ? <BsAsterisk color="red" fontSize="10px" /> : null}</InputLabel>
                                     <TextField size="small" multiline rows={4}
                                         {...register(item, valid(index))}
                                         error={Boolean(errors[item])}

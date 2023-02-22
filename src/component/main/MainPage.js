@@ -14,7 +14,7 @@ function MainPage() {
                 {
                     registerData?Object.keys(registerData).map(key => {
                         return (
-                            <Body text={key} value={registerData[key]} width1='20%' width2='80%' />
+                            registerData[key]?<Body text={key} value={registerData[key]} width1='20%' width2='80%' />:null
                         )
                     }):null
                 }
