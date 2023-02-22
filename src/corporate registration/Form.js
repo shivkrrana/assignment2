@@ -3,12 +3,18 @@ import { Button, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, Inpu
 import { Stack } from "@mui/system";
 import { useForm } from "react-hook-form";
 import { BsAsterisk } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import formData from "./formData";
 function Form() {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const dispatch = useDispatch();
+    const history = useNavigate()
     function onSubmit(data) {
+        history('/')
         localStorage.setItem('register',JSON.stringify(data));
+        dispatch({type:"REGISTER_DATA",payload:data})
     }
     function valid() {
         return (

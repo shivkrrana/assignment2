@@ -18,7 +18,7 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function FormDialog() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch()
-  const state = useSelector(state => state)
+  const state = useSelector(state => state.allowance)
   const handleClose = () => {
     dispatch({ type: "SHOW_POPUP", payload: false })
   };
@@ -30,7 +30,10 @@ export default function FormDialog() {
   }
 
   function onSubmit(data) {
+    if(data)
+    handleClose();
     localStorage.setItem('allowances', JSON.stringify(data))
+    dispatch({type:"ALLOWANCE_DATA",payload:data})
   }
 
   return (
@@ -67,7 +70,7 @@ export default function FormDialog() {
             }
 
             <Stack sx={{ display: "flex", alignItems: "center" }}>
-              <Button sx={{ padding: "10px 80px", backgroundColor: "hsl(249deg 68% 29%)" }} type="submit" variant="contained">Save</Button>
+              <Button sx={{ padding: "10px 80px", backgroundColor: "hsl(249deg 68% 29%)" }} type="submit" variant="contained" >Save</Button>
             </Stack>
 
           </form>

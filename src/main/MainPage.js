@@ -2,10 +2,11 @@ import { Box, Stack } from "@mui/system";
 import "./main.css"
 import Header from "./Header";
 import Body from "./body";
+import { useSelector } from "react-redux";
 
 function MainPage() {
-    const registerData = JSON.parse(localStorage.getItem('register'))
-    const allowanceData = JSON.parse(localStorage.getItem('allowances'))
+    const registerData = useSelector(state=>state.registerData)
+    const allowanceData = useSelector(state=>state.allowancePopup)
     return (
         <Box>
             <Header title='Corporate Information' link='/register'/>
