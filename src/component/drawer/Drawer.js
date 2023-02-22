@@ -35,7 +35,7 @@ function FixedDrawer(){
         <List sx={{backgroundColor:"hsl(249deg 68% 29%)"}}>
           {['Dashboard','Manage Subscription', 'Young Brain', 'Mid Career', 'Vendor',
           'Consultant','Reports','Sign Out'].map((item) => (
-            <ListItem key={item} disablePadding sx={{color:"#e0e0e0",margin:"10px",}}>
+            <ListItem key={item} disablePadding sx={{color:"#e0e0e0",margin:"10px 0"}}>
               <ListItemButton>
                 <ListItemIcon sx={{color:"#e0e0e0"}}>
                     {menuIcon(item)}
